@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/11/2015 05:43:22 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="co.edu.udea.iw.dto.Direccion" table="direcciones">
+		<!-- Cuando la clave primaria es compuesta se implementa: -->
+		<composite-id name="id" class="co.edu.udea.iw.dto.DireccionId">
+			<key-property name="codigo" type="java.lang.Long">
+				<column name="CODIGO" precision="12" />
+			</key-property>
+			<!-- Para la clave compuesta de tipo Cliente se usa: -->
+			<key-many-to-one name="cliente" class="co.edu.udea.iw.dto.Cliente">
+				<column name="CLIENTE" length="15" />
+			</key-many-to-one>
+		</composite-id>
+		<property name="direccion" type="java.lang.String">
+			<column name="DIRECCION" length="120" not-null="true" />
+		</property>
+		<property name="telefono" type="java.lang.String">
+			<column name="TELEFONO" length="45" not-null="true" />
+		</property>
+		<many-to-one name="ciudad" class="co.edu.udea.iw.dto.Ciudad"
+			fetch="join">
+			<column name="CIUDAD" precision="12" scale="0" />
+		</many-to-one>
+		<property name="preferida" type="boolean">
+			<column name="PREFERIDA" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

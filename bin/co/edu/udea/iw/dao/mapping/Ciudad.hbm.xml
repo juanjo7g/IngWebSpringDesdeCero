@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/11/2015 05:11:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="co.edu.udea.iw.dto.Ciudad" table="ciudades">
+		<id name="codigo" type="java.lang.Long">
+			<column name="CODIGO" precision="12" scale="0" /> <!-- Precision valida la longitud - Scale valida la cantidad de decimales, esto para no tener que validar en la BD -->
+			<generator class="assigned" /> <!-- El usuario pone el codigo -->
+		</id>
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" length="50" not-null="true" />
+		</property>
+		<property name="codigoArea" type="java.lang.String">
+			<column name="CODIGOAREA" length="4" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>
