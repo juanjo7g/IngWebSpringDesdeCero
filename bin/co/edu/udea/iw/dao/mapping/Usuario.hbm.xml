@@ -18,7 +18,7 @@
 			<column name="CONTRASENA" length="125" not-null="true" />
 		</property>
 		<many-to-one name="rol" class="co.edu.udea.iw.dto.Rol"
-			fetch="join">
+			fetch="select" lazy="proxy">
 			<column name="ROL" length="12" not-null="true" />
 		</many-to-one>
 	</class>

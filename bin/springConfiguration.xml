@@ -57,4 +57,8 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="UsuarioBL" class="co.edu.udea.iw.bl.impl.UsuarioBLImpl">
+		<property name="daoU" ref="UsuarioDAO"></property>
+	</bean>
+	
 </beans>

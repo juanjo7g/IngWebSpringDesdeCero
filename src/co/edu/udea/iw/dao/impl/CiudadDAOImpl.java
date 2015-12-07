@@ -25,14 +25,6 @@ public class CiudadDAOImpl extends HibernateDaoSupport implements CiudadDAO {
 			ciudades =criteria.list();
 		} catch (Exception e) {
 			throw new MyException(e); // Pasa la exception a MyException
-		}finally{
-			if (session!=null) {
-				try {
-					session.close();
-				} catch (HibernateException e) {
-					throw new MyException(e);
-				}
-			}
 		}
 		
 		return ciudades;
