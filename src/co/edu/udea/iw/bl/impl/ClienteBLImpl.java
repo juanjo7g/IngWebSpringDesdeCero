@@ -41,7 +41,7 @@ public class ClienteBLImpl implements ClienteBL {
 			throw new MyException("Email no valido", null);
 		}
 		if (daoC.obtenerCliente(cedula) != null) {
-			throw new MyException("Ya existe un cliente con la cedula repetida", null);
+			throw new MyException("Ya existe un cliente con la cedula", null);
 		}
 		usuario = daoU.obtenerUsuario(usuarioCrea);
 		if(usuario==null)
